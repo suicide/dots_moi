@@ -1,0 +1,15 @@
+
+host homebase.get-it.us 
+ HostName homebase.get-it.us 
+ IdentityFile ~/.ssh/id_rsa_legacy
+ User psy
+
+host github.com
+ HostName github.com
+ IdentityFile ~/.ssh/id_rsa_github
+ User git
+
+host bitbucket.org 
+ HostName bitbucket.org 
+ IdentityFile ~/.ssh/id_rsa_bitbucket
+ User git
