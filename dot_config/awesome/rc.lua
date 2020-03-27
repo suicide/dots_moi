@@ -772,6 +772,8 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 beautiful.useless_gap = 4
 beautiful.notification_icon_size = 16
+beautiful.notifivation_max_width = 300 
+beautiful.notifivation_max_height = 60 
 
 
 -- Startup applications
