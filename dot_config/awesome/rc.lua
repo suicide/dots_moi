@@ -532,9 +532,9 @@ globalkeys = my_table.join(
     -- alternatively use rofi, a dmenu-like application with more features
     -- check https://github.com/DaveDavenport/rofi for more details
     --[[ rofi ]]--
-    awful.key({ modkey }, "x", function ()
-            os.execute(string.format("rofi -show %s -theme %s",
-            'run', 'dmenu'))
+    awful.key({ modkey }, "d", function ()
+            os.execute(string.format("rofi -show %s -matching %s",
+            'combi', 'fuzzy'))
         end,
         {description = "show rofi", group = "launcher"}),
     --]]
