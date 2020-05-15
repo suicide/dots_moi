@@ -45,7 +45,8 @@ Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
-let g:gitgutter_async=0
+" let g:gitgutter_async=0
+" let g:gitgutter_log=1
 let mapleader = " "
 
 " navigate windows
@@ -59,4 +60,8 @@ nnoremap <Leader>u :UndotreeShow<CR>
 
 " fzf
 nnoremap <C-p> :Files<CR>
+
+" move in visual mode
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
 
