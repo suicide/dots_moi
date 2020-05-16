@@ -121,7 +121,7 @@ export GPG_TTY=$(tty)
 alias vim=nvim
 alias vi=nvim
 
-export EDITOR=vim
+export EDITOR=nvim
 
 ## kitty does not set this for some reason
 export TERM=xterm-kitty
