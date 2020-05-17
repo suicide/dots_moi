@@ -68,6 +68,8 @@ nnoremap <Leader>h :wincmd h<CR>
 nnoremap <Leader>j :wincmd j<CR>
 nnoremap <Leader>k :wincmd k<CR>
 nnoremap <Leader>l :wincmd l<CR>
+nnoremap <Leader>H gT
+nnoremap <Leader>L gt
 
 " Undotree
 nnoremap <Leader>u :UndotreeShow<CR>
@@ -101,6 +103,8 @@ nmap <silent> <Leader>gy <Plug>(coc-type-definition)
 nmap <silent> <Leader>gi <Plug>(coc-implementation)
 nmap <silent> <Leader>gr <Plug>(coc-references)
 
+" TODO go to test
+
 " Use K to show documentation in preview window.
 nnoremap <silent> <Leader>K :call <SID>show_documentation()<CR>
 
@@ -116,4 +120,7 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
-nmap <Leader>rn <Plug>(coc-rename)
+" TODO General refactoring
+nmap <Leader>rn <Plug>(coc:wincmd l<CR>-rename)
+" TODO Generate stuff
+" TODO organize imports

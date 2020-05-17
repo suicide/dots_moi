@@ -3,10 +3,65 @@ set ideajoin
 
 set number relativenumber
 
+set noerrorbells
 set expandtab
 set shiftwidth=2
-set tabstop=2
+set tabstop=2 softtabstop=2
 set autoindent
 set smartindent
 set scrolloff=3
+set nowrap
 
+set clipboard^=unnamed,unnamedplus
+
+set smartcase
+set noswapfile
+set nobackup
+set undofile
+set incsearch
+
+set termguicolors
+
+set hidden
+
+set updatetime=200
+
+set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+
+" spell checking
+set spell
+set spelllang=en,en_us
+
+let mapleader = " "
+
+" navigate windows
+nnoremap <Leader>h <C-w>h
+nnoremap <Leader>j <C-w>j
+nnoremap <Leader>k <C-w>k
+nnoremap <Leader>l <C-w>l
+nnoremap <Leader>H :action PreviousTab<CR>
+nnoremap <Leader>L :action NextTab<CR>
+
+nmap <silent> <C-w>C :action CloseEditor<CR>
+
+" move in visual mode
+vnoremap J :action MoveLineDown<CR>
+vnoremap K :action MoveLineUp<CR>
+
+" search everywhere
+nnoremap <C-p> :action SearchEverywhere<CR>
+
+" Remap keys for gotos
+nmap <silent> <Leader>gd :action GotoDeclaration<CR>
+nmap <silent> <Leader>gy :action GotoDeclaration<CR>
+nmap <silent> <Leader>gi :action GotoImplementation<CR>
+nmap <silent> <Leader>gr :action FindUsages<CR>
+
+nmap <silent> <Leader>gt :action GotoTest<CR>
+
+" Refactorings
+vmap T :action Refactorings.QuickListPopupAction<cr>
+nmap <leader>rn :action RenameElement<cr>
+nmap <leader>rg :action Generate<cr>
+nmap <leader>rI :action OptimizeImports<cr>
