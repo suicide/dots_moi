@@ -34,6 +34,7 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 set spell
 set spelllang=en,en_us
 
+let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 
 " setup vim-plug
 
