@@ -30,6 +30,8 @@ set updatetime=200
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
+set cmdheight=2
+
 " spell checking
 set spell
 set spelllang=en,en_us
@@ -50,7 +52,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'mbbill/undotree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'sheerun/vim-polyglot'
 
+Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 " Plug 'dracula/vim', { 'as': 'dracula' }
 
