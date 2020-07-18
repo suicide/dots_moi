@@ -1,0 +1,17 @@
+/dev
+/home/*/.aur/*
+/home/*/.cache/*
+/home/*/Downloads/*
+/lost+found
+/mnt
+/opt/tinyMediaManager/cache
+/proc
+/run
+/snap
+/sys
+/var/cache/*
+/var/lib/container
+/var/lib/lxcfs
+/var/lib/ooni
+/var/run
+/var/tmp/*
