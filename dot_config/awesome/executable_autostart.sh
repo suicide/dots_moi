@@ -2,7 +2,7 @@
 ## runs on each start of awesome
 
 ## setup monitors
-xrandr --output DVI-D-0 --auto --output HDMI-1-2 --left-of DVI-D-0 --auto --output HDMI-0 --auto --same-as HDMI-1-2
+xrandr --output DP-1 --auto --output DVI-D-1 --right-of DP-1 --auto --output HDMI-1 --auto --same-as DP-1
 
 # start picom
 DISPLAY=":0" picom -b
