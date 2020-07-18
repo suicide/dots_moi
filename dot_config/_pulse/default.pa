@@ -42,14 +42,6 @@ load-module module-switch-on-port-available
 #load-module module-null-sink
 #load-module module-pipe-sink
 
-#load-module module-alsa-sink device="hw:1,0" sink_name=analog_output
-# force proper hdmi output device
-load-module module-alsa-sink device="hw:1,7" sink_name=hdmi_output
-
-# create combined sink
-#load-module module-combine sink_name=analog_digital slaves=hdmi_output,analog_output
-load-module module-combine-sink sink_name=combined
-
 ### Automatically load driver modules depending on the hardware available
 .ifexists module-udev-detect.so
 load-module module-udev-detect
@@ -103,6 +95,12 @@ load-module module-gsettings
 .fail
 .endif
 
+# manually set other hdmi
+load-module module-alsa-sink device="hw:1,9" sink_name=hdmi_output
+
+### combined
+load-module module-combine-sink sink_name=combined
+set-default-sink combined
 
 ### Automatically restore the default sink/source when changed by the user
 ### during runtime
@@ -148,8 +146,3 @@ load-module module-filter-apply
 ### Make some devices default
 #set-default-sink output
 #set-default-source input
-
-set-default-sink combined
-
-# automcatically switch on newly connected devices
-load-module module-switch-on-connect
