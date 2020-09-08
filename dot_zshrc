@@ -61,14 +61,14 @@ DISABLE_AUTO_UPDATE="true"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=/usr/share/zsh/
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(copyfile cp direnv docker docker-compose extract git gradle jenv jsontools kubectl mvn rsync sudo wd vi-mode)
+plugins=(copyfile cp direnv docker docker-compose extract git gradle jenv jsontools kubectl mvn rsync sudo wd vi-mode zsh-autosuggestions zsh-syntax-highlighting)
 
 
 # User configuration
@@ -111,6 +111,8 @@ source $ZSH/oh-my-zsh.sh
 
 ## customization
 
+setopt HIST_IGNORE_SPACE
+
 # vi mode
 bindkey -v
 
@@ -128,4 +130,7 @@ export TERM=xterm-kitty
 
 ## borg backup setup
 export BORG_PASSCOMMAND="cat $HOME/.borg-passphrase"
+
+## fzf respect .gitignore and stuff, see https://github.com/junegunn/fzf#respecting-gitignore
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
