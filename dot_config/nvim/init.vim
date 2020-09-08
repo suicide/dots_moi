@@ -33,6 +33,10 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 set cmdheight=2
 
+set list
+set listchars=tab:␉·,trail:·,nbsp:⎵
+" set listchars=eol:⏎,tab:␉·,trail:·,nbsp:⎵
+
 " spell checking
 set spell
 set spelllang=en,en_us
@@ -54,9 +58,11 @@ Plug 'mbbill/undotree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'puremourning/vimspector'
 
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
+Plug 'srcery-colors/srcery-vim'
 " Plug 'dracula/vim', { 'as': 'dracula' }
 
 call plug#end()
@@ -205,3 +211,6 @@ nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
 " nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" vimspector
+let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
