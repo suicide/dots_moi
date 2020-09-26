@@ -4,6 +4,16 @@ host homebase.get-it.us
  IdentityFile ~/.ssh/id_rsa_legacy
  User psy
 
+host crystal
+ HostName crystal
+ IdentityFile ~/.ssh/id_rsa_legacy
+ User pirate
+
+host black
+ HostName black
+ IdentityFile ~/.ssh/id_rsa_legacy
+ User pirate
+
 host github.com
  HostName github.com
  IdentityFile ~/.ssh/id_rsa_github
