@@ -134,3 +134,7 @@ export BORG_PASSCOMMAND="cat $HOME/.borg-passphrase"
 ## fzf respect .gitignore and stuff, see https://github.com/junegunn/fzf#respecting-gitignore
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
+## fzf key binds and completion
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
