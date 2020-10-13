@@ -58,6 +58,7 @@ Plug 'mbbill/undotree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'puremourning/vimspector'
 
 Plug 'vim-airline/vim-airline'
