@@ -38,7 +38,7 @@ set listchars=tab:␉·,trail:·,nbsp:⎵
 " set listchars=eol:⏎,tab:␉·,trail:·,nbsp:⎵
 
 " spell checking
-set spell
+set nospell
 set spelllang=en,en_us
 
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
@@ -61,6 +61,11 @@ Plug 'sheerun/vim-polyglot'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'puremourning/vimspector'
 
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
+
+Plug 'kamykn/spelunker.vim'
+
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 Plug 'srcery-colors/srcery-vim'
@@ -71,6 +76,9 @@ call plug#end()
 " let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 set background=dark
+
+" scala filetype
+au BufRead,BufNewFile *.sbt,*.sc set filetype=scala
 
 " let g:gitgutter_async=0
 " let g:gitgutter_log=1
@@ -89,6 +97,17 @@ nnoremap <Leader>u :UndotreeShow<CR>
 
 " fzf
 nnoremap <C-p> :Files<CR>
+
+" treesitter
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    --disable = { "java" },  -- list of language that will be disabled
+  },
+}
+EOF
 
 " move in visual mode
 vnoremap J :m '>+1<CR>gv=gv
@@ -190,6 +209,10 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
+" Trigger for code actions
+" Make sure `"codeLens.enable": true` is set in your coc config
+nnoremap <leader>cl :<C-u>call CocActionAsync('codeLensAction')<CR>
+
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
@@ -213,5 +236,27 @@ nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
+" Coc Snippets
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+
+" Use <leader>x for convert visual selected code to snippet
+xmap <leader>x  <Plug>(coc-convert-snippet)
+
 " vimspector
 let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
+
+" freemarker
+au BufRead,BufNewFile *.ftl set filetype=html
