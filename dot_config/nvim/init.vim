@@ -54,6 +54,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'airblade/vim-gitgutter'
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
 Plug 'mbbill/undotree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -63,6 +64,12 @@ Plug 'puremourning/vimspector'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
+
+" telescope stuff
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 Plug 'kamykn/spelunker.vim'
 
@@ -96,7 +103,7 @@ nnoremap <Leader>L gt
 nnoremap <Leader>u :UndotreeShow<CR>
 
 " fzf
-nnoremap <C-p> :Files<CR>
+" nnoremap <C-p> :Files<CR>
 
 " treesitter
 lua <<EOF
@@ -260,3 +267,6 @@ let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 
 " freemarker
 au BufRead,BufNewFile *.ftl set filetype=html
+
+" markdown syntax highlighting in code
+let g:markdown_fenced_languages = ['html', 'python', 'ruby', 'vim']
