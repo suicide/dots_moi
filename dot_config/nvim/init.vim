@@ -4,7 +4,7 @@
 call plug#begin()
 
 " coc
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " lsp stuff
 Plug 'neovim/nvim-lspconfig'
@@ -13,6 +13,8 @@ Plug 'hrsh7th/nvim-compe'
 "Plug 'hrsh7th/vim-vsnip'
 Plug 'simrat39/symbols-outline.nvim'
 Plug 'glepnir/lspsaga.nvim'
+Plug 'mfussenegger/nvim-jdtls'
+Plug 'scalameta/nvim-metals', {'branch': 'next'}
 
 " visual git plugin
 Plug 'airblade/vim-gitgutter'
@@ -92,3 +94,9 @@ let g:markdown_fenced_languages = ['html', 'python', 'ruby', 'vim']
 
 " lsp config
 :lua require'lsp_config'
+:lua require'metals_setup'
+
+augroup jdtls_lsp
+    autocmd!
+    autocmd FileType java lua require'jdtls_setup'.setup()
+augroup end
