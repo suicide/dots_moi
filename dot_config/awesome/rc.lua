@@ -92,7 +92,7 @@ local browser      = os.getenv("BROWSER") or "google-chrome-stable"
 local scrlocker    = "slock"
 
 awful.util.terminal = terminal
-awful.util.tagnames = { "1", "2", "3", "4", "5" }
+awful.util.tagnames = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
 awful.layout.layouts = {
     awful.layout.suit.tile,
     awful.layout.suit.floating,
