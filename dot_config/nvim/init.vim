@@ -87,6 +87,7 @@ let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 
 " freemarker
 au BufRead,BufNewFile *.ftl set filetype=html
+au BufRead,BufNewFile *.sol set filetype=solidity
 
 " markdown syntax highlighting in code
 let g:markdown_fenced_languages = ['html', 'python', 'ruby', 'vim']
@@ -100,3 +101,8 @@ augroup jdtls_lsp
     autocmd!
     autocmd FileType java lua require'jdtls_setup'.setup()
 augroup end
+
+
+" treesitter
+:lua require'treesitter'
+:lua require'treesitter_solidity'
