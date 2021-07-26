@@ -17,6 +17,7 @@ Plug 'mfussenegger/nvim-jdtls'
 Plug 'scalameta/nvim-metals', {'branch': 'next'}
 
 " visual git plugin
+Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
@@ -106,3 +107,6 @@ augroup end
 " treesitter
 :lua require'treesitter'
 :lua require'treesitter_solidity'
+
+" reselect pasted text
+nnoremap gp `[v`]
