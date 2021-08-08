@@ -14,7 +14,7 @@ Plug 'hrsh7th/nvim-compe'
 Plug 'simrat39/symbols-outline.nvim'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'mfussenegger/nvim-jdtls'
-Plug 'scalameta/nvim-metals', {'branch': 'next'}
+Plug 'scalameta/nvim-metals'
 
 " visual git plugin
 Plug 'jiangmiao/auto-pairs'
