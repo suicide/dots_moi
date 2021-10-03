@@ -28,6 +28,9 @@ local function setup_servers()
 
     require'lspconfig'[server].setup(config)
   end
+
+  -- solidity
+  require'lspconfig'.solang.setup{}
 end
 
 setup_servers()
