@@ -92,7 +92,7 @@ cmd([[augroup end]])
 ----------------------------------
 -- LSP Setup ---------------------
 ----------------------------------
-metals_config = require("metals").bare_config
+metals_config = require("metals").bare_config()
 
 -- Example of settings
 metals_config.settings = {
