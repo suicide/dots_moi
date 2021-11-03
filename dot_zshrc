@@ -119,6 +119,11 @@ bindkey -v
 # git commit signing with gpg
 export GPG_TTY=$(tty)
 
+# unset display in shell for gpg pinentry in shell
+# this might cause other problems
+# unset DISPLAY
+export PINENTRY_USER_DATA=USE_TTY=1
+
 ## app aliases
 alias vim=nvim
 alias vi=nvim
