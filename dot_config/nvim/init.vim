@@ -121,6 +121,8 @@ augroup end
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
+let NERDTreeShowHidden=1
+
 " reselect pasted text
 nnoremap gp `[v`]
 
