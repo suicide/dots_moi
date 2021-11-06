@@ -32,6 +32,11 @@ Plug 'puremourning/vimspector'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 
+" Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
 " telescope stuff
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -88,6 +93,8 @@ let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 
 " freemarker
 au BufRead,BufNewFile *.ftl set filetype=html
+
+" solidity
 au BufRead,BufNewFile *.sol set filetype=solidity
 
 " markdown syntax highlighting in code
@@ -108,5 +115,13 @@ augroup end
 :lua require'treesitter'
 :lua require'treesitter_solidity'
 
+" NERDtree
+" nnoremap <leader>n :NERDTreeFocus<CR>
+" nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
 " reselect pasted text
 nnoremap gp `[v`]
+
+set completeopt=menuone,noselect
