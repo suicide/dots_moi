@@ -86,7 +86,9 @@ EOF
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-
+" change the direction of new splits
+set splitbelow
+set splitright
 
 " vimspector
 let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
