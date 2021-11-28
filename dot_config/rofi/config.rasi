@@ -1,6 +1,6 @@
 configuration {
     modi: "combi,windowcd,run";
-    theme: "android_notification";
     columns: 2;
     font: "hack 11";
 }
+@theme "android_notification"
