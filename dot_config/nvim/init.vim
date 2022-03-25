@@ -8,13 +8,19 @@ call plug#begin()
 
 " lsp stuff
 Plug 'neovim/nvim-lspconfig'
-Plug 'kabouzeid/nvim-lspinstall'
+"Plug 'kabouzeid/nvim-lspinstall'
+Plug 'williamboman/nvim-lsp-installer'
 Plug 'hrsh7th/nvim-compe'
 "Plug 'hrsh7th/vim-vsnip'
 Plug 'simrat39/symbols-outline.nvim'
+" replace with https://github.com/stevearc/aerial.nvim ??
 Plug 'glepnir/lspsaga.nvim'
-Plug 'mfussenegger/nvim-jdtls'
+" Plug 'mfussenegger/nvim-jdtls'
 Plug 'scalameta/nvim-metals'
+
+" dap
+Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
 
 " visual git plugin
 Plug 'jiangmiao/auto-pairs'
@@ -27,7 +33,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " Plug 'sheerun/vim-polyglot'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'puremourning/vimspector'
+" Plug 'puremourning/vimspector'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
@@ -107,15 +113,15 @@ let g:markdown_fenced_languages = ['html', 'python', 'ruby', 'vim']
 :lua require'lsp_config'
 :lua require'metals_setup'
 
-augroup jdtls_lsp
-    autocmd!
-    autocmd FileType java lua require'jdtls_setup'.setup()
-augroup end
+" augroup jdtls_lsp
+"     autocmd!
+"     autocmd FileType java lua require'jdtls_setup'.setup()
+" augroup end
 
 
 " treesitter
 :lua require'treesitter'
-:lua require'treesitter_solidity'
+" :lua require'treesitter_solidity'
 
 " NERDtree
 " nnoremap <leader>n :NERDTreeFocus<CR>

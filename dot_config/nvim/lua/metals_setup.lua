@@ -120,37 +120,38 @@ metals_config.capabilities = capabilities
 metals_config.on_attach = on_attach
 
 -- Debug settings if you're using nvim-dap
--- local dap = require("dap")
+local dap = require("dap")
 
--- dap.configurations.scala = {
---   {
---     type = "scala",
---     request = "launch",
---     name = "Run",
---     metals = {
---       runType = "run",
---       args = { "firstArg", "secondArg", "thirdArg" },
---     },
---   },
---   {
---     type = "scala",
---     request = "launch",
---     name = "Test File",
---     metals = {
---       runType = "testFile",
---     },
---   },
---   {
---     type = "scala",
---     request = "launch",
---     name = "Test Target",
---     metals = {
---       runType = "testTarget",
---     },
---   },
--- }
+dap.configurations.scala = {
+  {
+    type = "scala",
+    request = "launch",
+    name = "Run",
+    metals = {
+      runType = "run",
+      -- args = { "firstArg", "secondArg", "thirdArg" },
+    },
+  },
+  {
+    type = "scala",
+    request = "launch",
+    name = "Test File",
+    metals = {
+      runType = "testFile",
+    },
+  },
+  {
+    type = "scala",
+    request = "launch",
+    name = "Test Target",
+    metals = {
+      runType = "testTarget",
+    },
+  },
+}
 
--- Metals_config.on_attach = function(client, bufnr)
---   require("metals").setup_dap()
--- end
+metals_config.on_attach = function(client, bufnr)
+  on_attach(client, bufnr)
+  require("metals").setup_dap()
+end
 

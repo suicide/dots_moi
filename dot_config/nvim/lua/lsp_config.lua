@@ -17,29 +17,65 @@ local function make_config()
 end
 
 local function setup_servers()
-  require'lspinstall'.setup()
-  local servers = require'lspinstall'.installed_servers()
-  for _, server in pairs(servers) do
-    local config = make_config()
+  local lsp_installer = require("nvim-lsp-installer")
 
-    if server == "java" then
-      config.root_dir = lspconfig.util.root_pattern(".git")
-    end
+  -- Register a handler that will be called for all installed servers.
+  -- Alternatively, you may also register handlers on specific server instances instead (see example below).
+  lsp_installer.on_server_ready(function(server)
+      -- local opts = {}
+      local opts = make_config()
 
-    require'lspconfig'[server].setup(config)
-  end
+      -- (optional) Customize the options passed to the server
+      -- if server.name == "tsserver" then
+      --     opts.root_dir = function() ... end
+      -- end
 
-  -- solidity
-  require'lspconfig'.solang.setup{}
+      if server["name"] == "jdtls" then
+        opts.root_dir = lspconfig.util.root_pattern(".git")
+      end
+
+      -- This setup() function is exactly the same as lspconfig's setup function.
+      -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+      server:setup(opts)
+  end)
+
+  -- require'lspinstall'.setup()
+  -- local servers = require'lspinstall'.installed_servers()
+  -- for _, server in pairs(servers) do
+  --   local config = make_config()
+
+  --   if server == "java" then
+  --     config.root_dir = lspconfig.util.root_pattern(".git")
+  --   end
+
+  --   require'lspconfig'[server].setup(config)
+  -- end
+
+  -- -- solidity
+  -- require'lspconfig'.solang.setup{}
 end
 
 setup_servers()
 
--- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
-require'lspinstall'.post_install_hook = function ()
-  setup_servers() -- reload installed servers
-  vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
+require('dapui').setup()
+
+-- run dapui when dap connects and so on
+local dap, dapui = require("dap"), require("dapui")
+dap.listeners.after.event_initialized["dapui_config"] = function()
+  dapui.open()
 end
+dap.listeners.before.event_terminated["dapui_config"] = function()
+  dapui.close()
+end
+dap.listeners.before.event_exited["dapui_config"] = function()
+  dapui.close()
+end
+
+-- -- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
+-- require'lspinstall'.post_install_hook = function ()
+--   setup_servers() -- reload installed servers
+--   vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
+-- end
 
 -- nvim compe
 vim.o.completeopt = "menuone,noselect"
