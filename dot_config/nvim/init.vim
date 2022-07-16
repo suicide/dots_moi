@@ -72,7 +72,7 @@ nnoremap <Leader>H gT
 nnoremap <Leader>L gt
 
 " Undotree
-nnoremap <Leader>u :UndotreeShow<CR>
+nnoremap <Leader>u :UndotreeToggle<CR>
 
 " fzf
 " nnoremap <C-p> :Files<CR>
