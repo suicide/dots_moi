@@ -131,7 +131,8 @@ alias vi=nvim
 export EDITOR=nvim
 
 ## kitty does not set this for some reason
-export TERM=xterm-kitty
+# export TERM=xterm-kitty
+alias ssh='TERM="xterm-256color" ssh'
 
 ## borg backup setup
 export BORG_PASSCOMMAND="cat $HOME/.borg-passphrase"
@@ -146,3 +147,8 @@ source /usr/share/fzf/completion.zsh
 function read-word () {
   unzip -p $1 word/document.xml | sed -e 's/<\/w:p>/\n/g; s/<[^>]\{1,\}>//g; s/[^[:print:]\n]\{1,\}//g'
 }
+
+## npm config
+install -d ~/.npm-global
+export NPM_CONFIG_PREFIX=~/.npm-global
+export PATH=$PATH:~/.npm-global/bin
