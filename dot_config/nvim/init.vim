@@ -93,6 +93,9 @@ EOF
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
+" paste without overwriting the register
+xnoremap <Leader>p \"_dP
+
 " change the direction of new splits
 set splitbelow
 set splitright
