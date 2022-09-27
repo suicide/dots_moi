@@ -1,5 +1,15 @@
 #!/bin/sh
 
+# do not turn display off
+xset s off
+xset -dpms
+xset s noblank
+
+# set compose key to menu
+setxkbmap -option compose:menu
+
+
+# start awesome
 exec awesome
 
 ## nouveau
@@ -15,6 +25,9 @@ exec awesome
 xrandr --output DVI-D-1 --auto --output HDMI-1 --same-as DVI-D-1 --auto --output DP-1 --auto --same-as DVI-D-1
 
 # do not turn display off
-xset s off
-xset -dpms
-xset s noblank
+# xset s off
+# xset -dpms
+# xset s noblank
+
+# set compose key to menu
+# setxkbmap -option compose:menu
