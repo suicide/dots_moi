@@ -3,12 +3,12 @@
 declare -A repos
 
 repos=( 
-	["$HOME/.config/awesome/freedesktop"]="git@github.com:lcpz/awesome-freedesktop.git"
-	["$HOME/.config/awesome/lain"]="git@github.com:lcpz/lain.git"
-	["$HOME/.config/nvim"]="git@github.com:suicide/nvim-conf.git"
+	# ["$HOME/.config/awesome/freedesktop"]="git@github.com:lcpz/awesome-freedesktop.git"
+	# ["$HOME/.config/awesome/lain"]="git@github.com:lcpz/lain.git"
+	# ["$HOME/.config/nvim"]="git@github.com:suicide/nvim-conf.git"
 	# ["$HOME/.config/tree-sitter-solidity"]="git@github.com:suicide/tree-sitter-solidity.git"
-	["$HOME/.bin/jenv"]="https://github.com/jenv/jenv.git"
-	["$HOME/.tmux/plugins/tpm"]="https://github.com/tmux-plugins/tpm"
+	# ["$HOME/.bin/jenv"]="https://github.com/jenv/jenv.git"
+	# ["$HOME/.tmux/plugins/tpm"]="https://github.com/tmux-plugins/tpm"
 	)
 
 for path in "${!repos[@]}"; do
