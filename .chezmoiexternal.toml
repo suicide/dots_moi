@@ -18,12 +18,3 @@
     type = "git-repo"
     url = "https://github.com/tmux-plugins/tpm"
     refreshPeriod = "168h"
-
-[".lib/java-debug"]
-    type = "git-repo"
-    url = "git@github.com:microsoft/java-debug.git"
-    refreshPeriod = "168h"
-[".lib/vscode-java-test"]
-    type = "git-repo"
-    url = "git@github.com:microsoft/vscode-java-test.git"
-    refreshPeriod = "168h"
