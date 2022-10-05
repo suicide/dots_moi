@@ -1,14 +1,14 @@
 [".config/nvim"]
     type = "git-repo"
-    url = "git@github.com:suicide/nvim-conf.git"
+    url = "https://github.com/suicide/nvim-conf.git"
     refreshPeriod = "24h"
 [".config/awesome/freedesktop"]
     type = "git-repo"
-    url = "git@github.com:lcpz/awesome-freedesktop.git"
+    url = "https://github.com/lcpz/awesome-freedesktop.git"
     refreshPeriod = "168h"
 [".config/awesome/lain"]
     type = "git-repo"
-    url = "git@github.com:lcpz/lain.git"
+    url = "https://github.com/lcpz/lain.git"
     refreshPeriod = "168h"
 [".bin/jenv"]
     type = "git-repo"
