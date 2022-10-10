@@ -783,4 +783,5 @@ beautiful.notifivation_max_height = 60
 -- would like to run every time AwesomeWM restarts
 -- ===================================================================
 awful.spawn.with_shell( os.getenv("HOME") .. "/.config/awesome/autostart.sh")
+awful.spawn.with_shell( os.getenv("HOME") .. "/.config/awesome/start-screenlock.sh")
 
