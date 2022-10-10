@@ -10,6 +10,7 @@ xrandr --output DisplayPort-0 --auto --output DVI-D-0 --right-of DisplayPort-0 -
 setxkbmap -option compose:menu
 setxkbmap -option caps:escape
 
+if hash picom 2>/dev/null; then
 # start picom
-DISPLAY=":0" picom -b
-
+  DISPLAY=":0" picom -b
+fi
