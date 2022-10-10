@@ -1,0 +1,4 @@
+INSTALLATION.md
+{{- if ne .chezmoi.hostname "psy-nb-mini" }}
+.asoundrc
+{{- end }}
