@@ -86,8 +86,9 @@ plugins=(copyfile cp direnv docker docker-compose extract git gradle jenv jsonto
 # fi
 
 ## jenv
-export PATH="$HOME/.bin/jenv/bin:$PATH"
-eval "$(jenv init -)"
+if hash jenv 2>/dev/null; then
+  eval "$(jenv init -)"
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"

@@ -10,10 +10,6 @@
     type = "git-repo"
     url = "https://github.com/lcpz/lain.git"
     refreshPeriod = "168h"
-[".bin/jenv"]
-    type = "git-repo"
-    url = "https://github.com/jenv/jenv.git"
-    refreshPeriod = "168h"
 [".tmux/plugins/tpm"]
     type = "git-repo"
     url = "https://github.com/tmux-plugins/tpm"
