@@ -516,6 +516,8 @@ globalkeys = my_table.join(
               {description = "run browser", group = "launcher"}),
     awful.key({ modkey }, "e", function () awful.spawn({browser, "--incognito"}) end,
               {description = "run browser incognito", group = "launcher"}),
+    awful.key({ modkey, "Shift" }, "e", function () awful.spawn({browser, "--tor"}) end,
+              {description = "run browser with tor", group = "launcher"}),
     awful.key({ modkey }, "a", function () awful.spawn(guieditor) end,
               {description = "run gui editor", group = "launcher"}),
 
