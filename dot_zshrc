@@ -150,6 +150,14 @@ function read-word () {
 }
 
 ## npm config
-install -d ~/.npm-global
 export NPM_CONFIG_PREFIX=~/.npm-global
 export PATH=$PATH:~/.npm-global/bin
+
+## foundry
+export PATH=$PATH:~/.foundry/bin
+
+### add autocomplete
+# https://book.getfoundry.sh/config/shell-autocompletion
+# if hash forge 2>/dev/null; then
+#   source <(forge completions zsh)
+# fi

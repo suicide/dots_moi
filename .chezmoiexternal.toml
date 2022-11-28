@@ -14,3 +14,8 @@
     type = "git-repo"
     url = "https://github.com/tmux-plugins/tpm"
     refreshPeriod = "168h"
+[".foundry/bin/foundryup"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/foundry-rs/foundry/master/foundryup/foundryup"
+    executable = true
+    refreshPeriod = "168h"
