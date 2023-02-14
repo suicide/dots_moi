@@ -68,7 +68,7 @@ ZSH_CUSTOM=/usr/share/zsh/
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(copyfile cp direnv docker docker-compose extract git gradle jenv jsontools kubectl mvn rsync sudo wd vi-mode rust zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(copyfile cp direnv docker docker-compose extract git gradle jenv jsontools kubectl mvn rsync sudo wd vi-mode rust nvm zsh-autosuggestions zsh-syntax-highlighting)
 
 
 # User configuration
@@ -149,9 +149,12 @@ function read-word () {
   unzip -p $1 word/document.xml | sed -e 's/<\/w:p>/\n/g; s/<[^>]\{1,\}>//g; s/[^[:print:]\n]\{1,\}//g'
 }
 
-## npm config
-export NPM_CONFIG_PREFIX=~/.npm-global
-export PATH=$PATH:~/.npm-global/bin
+# Set up Node Version Manager
+source /usr/share/nvm/init-nvm.sh
+
+## vanilla npm config
+# export NPM_CONFIG_PREFIX=~/.npm-global
+# export PATH=$PATH:~/.npm-global/bin
 
 ## foundry
 export PATH=$PATH:~/.foundry/bin
