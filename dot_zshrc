@@ -68,7 +68,7 @@ ZSH_CUSTOM=/usr/share/zsh/
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(copyfile cp direnv docker docker-compose extract git gradle jenv jsontools kubectl mvn rsync sudo wd vi-mode rust nvm zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(copyfile cp direnv docker docker-compose extract git gradle jenv kubectl mvn rsync sudo vi-mode rust nvm wd zsh-autosuggestions zsh-syntax-highlighting)
 
 
 # User configuration
@@ -136,7 +136,7 @@ export EDITOR=nvim
 alias ssh='TERM="xterm-256color" ssh'
 
 ## borg backup setup
-export BORG_PASSCOMMAND="cat $HOME/.borg-passphrase"
+# export BORG_PASSCOMMAND="cat $HOME/.borg-passphrase"
 
 ## fzf respect .gitignore and stuff, see https://github.com/junegunn/fzf#respecting-gitignore
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
