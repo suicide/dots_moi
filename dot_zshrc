@@ -1,6 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# export path with local bins and symlinks
+export PATH=$HOME/.bin:$PATH
+
 # Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/
 
@@ -110,6 +113,9 @@ fi
 
 ## custom: nvm lazy init
 zstyle ':omz:plugins:nvm' lazy yes
+# init nvim as lsp, etc needs node
+zstyle ':omz:plugins:nvm' lazy-cmd vim vi nvim
+
 # do not autoload nvmrc as it needs a nvm script that is not loaded
 # zstyle ':omz:plugins:nvm' autoload yes
 
@@ -133,8 +139,10 @@ export GPG_TTY=$(tty)
 export PINENTRY_USER_DATA=USE_TTY=1
 
 ## app aliases
-alias vim=nvim
-alias vi=nvim
+#
+# Disable aliases for vim, instead use symlinks in $HOME/.bin due to nvm init
+# alias vim=nvim
+# alias vi=nvim
 
 export EDITOR=nvim
 
