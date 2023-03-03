@@ -89,7 +89,7 @@ local cycle_prev   = true -- cycle trough all previous client or just the first 
 local editor       = os.getenv("EDITOR") or "vim"
 local gui_editor   = os.getenv("GUI_EDITOR") or "gvim"
 local browser      = os.getenv("BROWSER") or "brave"
-local scrlocker    = "slock"
+local scrlocker    = "xset s activate"
 
 awful.util.terminal = terminal
 awful.util.tagnames = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
