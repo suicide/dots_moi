@@ -71,7 +71,8 @@ ZSH_CUSTOM=/usr/share/zsh/
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(copyfile cp direnv docker docker-compose extract git gradle jenv kubectl mvn rsync sudo vi-mode rust nvm wd zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(copyfile cp direnv docker docker-compose extract git gradle kubectl mvn rsync sudo vi-mode rust wd zsh-autosuggestions zsh-syntax-highlighting)
+## removed in favor of rtx: nvm, jenv
 
 
 # User configuration
@@ -88,10 +89,10 @@ plugins=(copyfile cp direnv docker docker-compose extract git gradle jenv kubect
 #   export EDITOR='mvim'
 # fi
 
-## jenv
-if hash jenv 2>/dev/null; then
-  eval "$(jenv init -)"
-fi
+## jenv - replaced by rtx
+# if hash jenv 2>/dev/null; then
+#   eval "$(jenv init -)"
+# fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -111,10 +112,11 @@ if [[ ! -d $ZSH_CACHE_DIR ]]; then
 fi
 
 
+## nvm - replaced by rtx
 ## custom: nvm lazy init
-zstyle ':omz:plugins:nvm' lazy yes
+# zstyle ':omz:plugins:nvm' lazy yes
 # init nvim as lsp, etc needs node
-zstyle ':omz:plugins:nvm' lazy-cmd vim vi nvim
+# zstyle ':omz:plugins:nvm' lazy-cmd vim vi nvim
 
 # do not autoload nvmrc as it needs a nvm script that is not loaded
 # zstyle ':omz:plugins:nvm' autoload yes
@@ -141,14 +143,20 @@ export PINENTRY_USER_DATA=USE_TTY=1
 ## app aliases
 #
 # Disable aliases for vim, instead use symlinks in $HOME/.bin due to nvm init
-# alias vim=nvim
-# alias vi=nvim
+alias vim=nvim
+alias vi=nvim
 
 export EDITOR=nvim
 
 ## kitty does not set this for some reason
 # export TERM=xterm-kitty
 alias ssh='TERM="xterm-256color" ssh'
+
+## use exa instead of ls
+alias ls='exa'
+
+## use bat instead of cat
+alias cat='bat'
 
 ## borg backup setup
 # export BORG_PASSCOMMAND="cat $HOME/.borg-passphrase"
@@ -180,3 +188,7 @@ export PATH=$PATH:~/.foundry/bin
 # if hash forge 2>/dev/null; then
 #   source <(forge completions zsh)
 # fi
+
+## add rtx
+eval "$(/usr/bin/rtx activate zsh)"
+eval "$(rtx complete -s zsh)"
