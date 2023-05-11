@@ -89,6 +89,7 @@ local cycle_prev   = true -- cycle trough all previous client or just the first 
 local editor       = os.getenv("EDITOR") or "vim"
 local gui_editor   = os.getenv("GUI_EDITOR") or "gvim"
 local browser      = os.getenv("BROWSER") or "brave"
+local altbrowser   = os.getenv("ALTBROWSER") or "librewolf"
 local scrlocker    = "xset s activate"
 
 awful.util.terminal = terminal
@@ -518,6 +519,10 @@ globalkeys = my_table.join(
               {description = "run browser incognito", group = "launcher"}),
     awful.key({ modkey, "Shift" }, "e", function () awful.spawn({browser, "--tor"}) end,
               {description = "run browser with tor", group = "launcher"}),
+    awful.key({ modkey, altkey }, "e", function () awful.spawn({altbrowser}) end,
+              {description = "run altbrowser", group = "launcher"}),
+    awful.key({ modkey, altkey, "Shift" }, "e", function () awful.spawn({altbrowser, "--private-window"}) end,
+              {description = "run altbrowser in private", group = "launcher"}),
     awful.key({ modkey }, "a", function () awful.spawn(guieditor) end,
               {description = "run gui editor", group = "launcher"}),
 
