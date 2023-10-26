@@ -192,3 +192,6 @@ export PATH=$PATH:~/.foundry/bin
 ## add rtx
 eval "$(/usr/bin/rtx activate zsh)"
 eval "$(rtx complete -s zsh)"
+
+## load zcalc
+autoload -Uz zcalc
