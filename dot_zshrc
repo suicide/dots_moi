@@ -189,9 +189,10 @@ export PATH=$PATH:~/.foundry/bin
 #   source <(forge completions zsh)
 # fi
 
-## add rtx
-eval "$(/usr/bin/rtx activate zsh)"
-eval "$(rtx complete -s zsh)"
+## add mise
+eval "$(mise activate zsh)"
+# source /home/psy/_rtx_comp
+eval "$(mise completion zsh)"
 
 ## load zcalc
 autoload -Uz zcalc
