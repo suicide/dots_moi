@@ -154,6 +154,7 @@ alias ssh='TERM="xterm-256color" ssh'
 
 ## use exa instead of ls
 alias ls='eza'
+alias l='ls -lahg'
 
 ## use bat instead of cat
 alias cat='bat'
