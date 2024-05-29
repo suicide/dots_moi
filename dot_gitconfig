@@ -1,6 +1,6 @@
 [user]
 	email = suiiii@suiiii.rip
 	name = suiiii
-	signingkey = 67FC67061C6E536F
+	signingkey = 3A7A0EA9FE70D54C
 [commit]
 	gpgsign = true
