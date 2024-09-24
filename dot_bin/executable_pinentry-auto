@@ -12,4 +12,4 @@ esac
 
 # Otherwise, use any X11 UI (configured by Debian Alternatives System)
 # Note: Will fall back to curses if $DISPLAY is not available.
-exec pinentry-gtk-2 "$@"
+exec pinentry-gtk "$@"
