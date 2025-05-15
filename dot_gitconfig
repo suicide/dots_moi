@@ -14,6 +14,7 @@
 	renames = true
 [push]
 	autoSetupRemote = true
+	recurseSubmodules = on-demand
 [fetch]
 	prune = true
 	pruneTags = true
@@ -26,3 +27,10 @@
 [rebase]
 	autoSquash = true
 	autoStash = true
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[submodule]
+	recurse = true
