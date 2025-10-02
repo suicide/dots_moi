@@ -258,6 +258,11 @@ globalkeys = my_table.join(
     awful.key({ altkey, "Control" }, "l", function () os.execute(scrlocker) end,
               {description = "lock screen", group = "hotkeys"}),
 
+    -- dismiss notification
+    awful.key({ modkey, }, "Delete", function()
+      naughty.destroy_all_notifications()
+    end),
+
     -- Hotkeys
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description = "show help", group="awesome"}),
